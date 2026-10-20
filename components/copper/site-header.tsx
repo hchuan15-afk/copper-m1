@@ -15,28 +15,26 @@ export function SiteHeader() {
       data-testid="site-header"
       className="bg-background/90 sticky top-0 z-50 border-b backdrop-blur"
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-        <Link
-          href="/"
-          aria-label="Copper State Labs home"
-          className="shrink-0"
-        >
-          <Logo className="w-32 sm:w-44" />
+      {/* Phones: logo and theme toggle on top, links on a second row. */}
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-4 gap-y-1 px-4 py-2 sm:flex-nowrap sm:py-3">
+        <Link href="/" aria-label="Copper State Labs home" className="shrink-0">
+          <Logo className="w-36 sm:w-44" />
         </Link>
-        <div className="flex items-center gap-1 sm:gap-4">
-          <nav aria-label="Main" className="flex items-center gap-3 sm:gap-6">
-            {NAV.map(({ href, label }) => (
-              <a
-                key={href}
-                href={href}
-                className="text-muted-foreground hover:text-primary text-sm font-semibold whitespace-nowrap transition-colors sm:text-base"
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
-          <ModeToggle />
-        </div>
+        <nav
+          aria-label="Main"
+          className="order-last flex w-full items-center justify-center gap-6 pb-1 sm:order-none sm:ml-auto sm:w-auto sm:pb-0"
+        >
+          {NAV.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              className="text-muted-foreground hover:text-primary text-sm font-semibold whitespace-nowrap transition-colors sm:text-base"
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+        <ModeToggle />
       </div>
     </header>
   );

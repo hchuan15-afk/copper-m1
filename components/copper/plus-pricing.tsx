@@ -24,7 +24,11 @@ export function PlusPricing() {
   const plans = getPlans();
 
   return (
-    <section id="plus" data-testid="plus-pricing" className="scroll-mt-20">
+    <section
+      id="plus"
+      data-testid="plus-pricing"
+      className="scroll-mt-28 sm:scroll-mt-20"
+    >
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <div className="mx-auto mb-12 max-w-2xl text-center">
           <h2 className="text-3xl font-extrabold sm:text-4xl">
@@ -72,10 +76,7 @@ export function PlusPricing() {
                       <CardDescription className="mt-1 text-base">
                         or {formatUsd(plan.annualUsd)}/year
                         {savings > 0 && (
-                          <>
-                            {" "}
-                            &middot; Save {formatUsd(savings)} a year
-                          </>
+                          <> &middot; Save {formatUsd(savings)} a year</>
                         )}
                       </CardDescription>
                     </div>

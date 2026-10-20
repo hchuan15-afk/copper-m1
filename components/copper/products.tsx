@@ -29,7 +29,7 @@ export function Products() {
     <section
       id="products"
       data-testid="products"
-      className="bg-background scroll-mt-20"
+      className="bg-background scroll-mt-28 sm:scroll-mt-20"
     >
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <div className="mb-10 max-w-2xl">
@@ -99,7 +99,7 @@ export function Products() {
                       <span
                         aria-hidden
                         className={cn(
-                          "border-border size-4 rounded-full border",
+                          "ring-foreground/30 size-4 rounded-full ring-1",
                           SWATCHES[color],
                         )}
                       />

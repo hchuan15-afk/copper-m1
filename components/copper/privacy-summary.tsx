@@ -13,7 +13,7 @@ export function PrivacySummary() {
     <section
       id="privacy"
       data-testid="privacy-summary"
-      className="bg-accent text-accent-foreground scroll-mt-20"
+      className="bg-accent text-accent-foreground scroll-mt-28 sm:scroll-mt-20"
     >
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[1fr_2fr] md:gap-16 md:py-24">
         <Image
@@ -29,7 +29,7 @@ export function PrivacySummary() {
           <h2 className="text-3xl font-extrabold sm:text-4xl">
             Your privacy, in plain words.
           </h2>
-          <p className="mt-3 text-lg opacity-80">
+          <p className="mt-3 text-lg font-semibold">
             How Copper handles recordings under our {privacy.policy} privacy
             policy.
           </p>
@@ -37,13 +37,16 @@ export function PrivacySummary() {
           <ul className="mt-8 flex flex-col gap-4 text-base sm:text-lg">
             {privacy.points.map((point) => (
               <li key={point} className="flex gap-3">
-                <ShieldCheckIcon aria-hidden className="mt-0.5 size-6 shrink-0" />
+                <ShieldCheckIcon
+                  aria-hidden
+                  className="mt-0.5 size-6 shrink-0"
+                />
                 <span>{point}</span>
               </li>
             ))}
           </ul>
 
-          <p className="border-accent-foreground/20 mt-8 border-t pt-6 opacity-80">
+          <p className="border-accent-foreground/20 mt-8 border-t pt-6">
             <strong>Recording others?</strong> Some states require everyone in a
             conversation to agree. Copper Notes plays a chime and lights its
             amber ring when it starts recording.

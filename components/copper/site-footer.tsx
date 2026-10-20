@@ -16,7 +16,9 @@ export function SiteFooter() {
           <p className="font-heading text-lg font-semibold">
             From raw ideas to refined answers.
           </p>
-          <p className="text-sm opacity-70">Copper State Labs · Tempe, Arizona</p>
+          <p className="text-sm opacity-70">
+            Copper State Labs · Tempe, Arizona
+          </p>
         </div>
 
         <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2">
