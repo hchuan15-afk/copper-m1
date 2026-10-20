@@ -1,12 +1,7 @@
 import Image from "next/image";
+import { cutoutAlt } from "@/components/copper/product-alt";
 import { Button } from "@/components/ui/button";
-import { getProducts, type ProductId } from "@/lib/copper/catalog";
-
-// What each cutout shows; the product name and type come from the catalog.
-const CUTOUT_LOOK: Record<ProductId, string> = {
-  "copper-home": "with a woven copper shell and a round clock display",
-  "copper-notes": "in brushed copper with a glowing amber ring",
-};
+import { getProducts } from "@/lib/copper/catalog";
 
 // Cutouts are square PNGs on transparent backgrounds.
 const CUTOUT_SIZE = 1254;
@@ -15,8 +10,6 @@ export function Hero() {
   const products = getProducts();
   const home = products.find((p) => p.id === "copper-home");
   const notes = products.find((p) => p.id === "copper-notes");
-  const alt = (p: (typeof products)[number]) =>
-    `${p.name} ${p.type} ${CUTOUT_LOOK[p.id]}`;
 
   return (
     <section
@@ -37,8 +30,8 @@ export function Hero() {
           </p>
           <p className="text-muted-foreground max-w-md text-lg">
             {products.map((p) => p.name).join(" and ")}: an AI speaker for your
-            home and a clip-on recorder for your meetings and lectures, made in
-            Arizona.
+            home and a clip-on recorder for your meetings and lectures, from
+            Tempe, Arizona.
           </p>
           <Button asChild size="lg" className="mt-2 px-8 text-base">
             <a href="#products">See products</a>
@@ -49,7 +42,7 @@ export function Hero() {
           {home && (
             <Image
               src={home.cutout}
-              alt={alt(home)}
+              alt={cutoutAlt(home)}
               width={CUTOUT_SIZE}
               height={CUTOUT_SIZE}
               loading="eager"
@@ -61,7 +54,7 @@ export function Hero() {
           {notes && (
             <Image
               src={notes.cutout}
-              alt={alt(notes)}
+              alt={cutoutAlt(notes)}
               width={CUTOUT_SIZE}
               height={CUTOUT_SIZE}
               loading="eager"
